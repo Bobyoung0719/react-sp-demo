@@ -24,7 +24,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true, // 是否开启css-module
+              modules: false, // 是否开启css-module
               localIdentName: '[name]_[local]-[hash:base64:5]'
             }
           },
