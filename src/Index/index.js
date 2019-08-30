@@ -15,9 +15,21 @@ class Index extends Component {
   componentDidMount() {
     const myChart = echarts.init(document.getElementById('main'));
 
+    let xData = ['1-1', '2-2', '3-3', '4', '5-5']
+
     myChart.setOption({
       title: {
         text: '测试echarts-demo'
+      },
+      legend: {
+        tooltip: {},
+        data:[{
+          name: 2,
+          icon: 'circle',
+          textStyle: {
+            color: 'red'
+          } 
+        }]
       },
 
       grid: {
@@ -29,24 +41,24 @@ class Index extends Component {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['1', '2', '3', '4', '5'],
+        data: xData,
         axisLine: {show: false},
         axisLabel: {
           color: '#999',
           fontSize: '22px',
+          padding: [0, 20],
           formatter(v, i) {
-            return `${v}月`;
+            if(i == 0 || i == xData.length - 1) {
+              return v;
+            } else {
+              return null
+            }
           }
         },
         axisTick: {
           show: false
         },
-        axisPointer: {
-          show: true,
-          lineStyle: {
-            color: '#ccc'
-          }
-        }
+        
       },
       yAxis: {
         type: 'value',
@@ -57,10 +69,16 @@ class Index extends Component {
           show: false
         },
         axisLabel: {
-          color: '#999',
-          fontSize: '22px',
-          formatter(v, i) {
+          color: '#000',
+          fontSize: 10,
+          formatter(v) {
             return `${v}%`
+          }
+        },
+
+        splitLine: {
+          lineStyle: {
+            color: '#eee'
           }
         }
       },
@@ -71,9 +89,10 @@ class Index extends Component {
         // }
         textStyle: {}
       },
+
       series: [
         {
-          name: 'yangtao',
+          name: '22222',
           type: 'line',
           symbol: 'circle',
           areaStyle: {
@@ -81,7 +100,18 @@ class Index extends Component {
             origin: 'start'
           },
           lineStyle: '#f0392f',
-          data: [1, 11, 32, 4, 15, 6]
+          data: [-10, 0, 22, 10, 15, 6]
+        },
+        {
+          name: '1111',
+          type: 'line',
+          symbol: 'circle',
+          areaStyle: {
+            color : 'rgba(0, 0, 0, .5)',
+            origin: 'start'
+          },
+          lineStyle: '#000',
+          data: [0, 10, 5, 50, -15, 6]
         }
       ]
     });
