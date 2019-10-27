@@ -1,6 +1,6 @@
 const path = require('path');
 const px2rem = require('postcss-px2rem');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 let webpack = require('webpack');
 
@@ -24,16 +24,12 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: false, // 是否开启css-module
-              localIdentName: '[name]_[local]-[hash:base64:5]'
+              modules: {
+                localIdentName: '[name]_[local]-[hash:base64:5]'
+              }
             }
           },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: [px2rem({remUnit: 75})]
-            }
-          },
+          'postcss-loader',
           'sass-loader'
         ],
         include: [path.resolve(__dirname, 'src')]

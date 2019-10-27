@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 
-class Index extends Component {
-  render() {
-    return (
-      <div>
-        .//////
-
-        <button></button>
-      </div>
-    );
-  }
+function Page() {
+  return <div>page</div>
 }
-
-export default Index;
+export default Page;

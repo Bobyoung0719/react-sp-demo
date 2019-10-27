@@ -13,32 +13,25 @@ const Page2 = lazy(() => import('../Page2'));
 // 未匹到的容错页
 const NoMatch = lazy(() => import('../NoMatch'));
 
- class Main extends Component {
-  componentDidMount() {
-    
-  }
-
-  render() {
-    return (
-      <Router>
-        <Suspense fallback={<div>loading</div>}>
-          <Switch location={this.props.location}>
-            <Route path="/" component={Index} exact/>
-            <Route path="/page2" component={Page2} />
-            <Route component={NoMatch} />
-          </Switch>
-        </Suspense>
-      </Router>
-    )
-  }
+function Main() {
+  return (
+    <Router>
+      <Suspense fallback={<div>loading</div>}>
+        <Switch>
+          <Route path="/" exact>
+            <Index />
+          </Route>
+          <Route path="/page2">
+            <Page2 />
+          </Route>
+          <Route component={NoMatch} />
+        </Switch>
+      </Suspense>
+    </Router>
+  )
 }
 
 ReactDOM.render(
   <Main />,
   document.getElementById('root')  
 )
-
-// 实现热更新
-if (module.hot) {
-  module.hot.accept();
-}
