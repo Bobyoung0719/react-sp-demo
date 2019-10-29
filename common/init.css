@@ -15,6 +15,7 @@ button, input, textarea, a, img {
   border: none;
   outline: none;
   background: none;
+  text-decoration: none;
 }
 
 :global(#root) {

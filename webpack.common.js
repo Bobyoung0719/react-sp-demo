@@ -1,14 +1,17 @@
 const path = require('path');
-const px2rem = require('postcss-px2rem');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-let webpack = require('webpack');
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: './src/App/main.js',
+  entry: './src/app.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, './dist')
+    publicPath: '/',
+    filename: '[name].[hash:5].js',
+    chunkFilename: '[name].[hash:5].js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -18,21 +21,21 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(sc|c)ss$/,
+        test: /\.(le|c)ss$/,
         use:[
-          'style-loader',
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]_[local]-[hash:base64:5]'
+                localIdentName: '[name]-[local]-[hash:5]'
               }
             }
           },
           'postcss-loader',
-          'sass-loader'
+          'less-loader'
         ],
-        include: [path.resolve(__dirname, 'src')]
+        exclude: /node_modules/
       },
       {
         test: /\.(jpe?g|png|gif)$/,
@@ -51,19 +54,26 @@ module.exports = {
 
   resolve: {
     alias: {
-      component: path.resolve(__dirname, 'src'),
-      component: path.resolve(__dirname, './components'),
+      $com: path.resolve(__dirname, 'components'),
     },
     extensions: ['.js', '.json', '.jsx'],
   },
-  
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        verdor: {
+          chunks: 'all',
+          name: 'verdor'
+        },
+      }
+    }
+  },
   plugins: [
     new CleanWebpackPlugin({path: path.resolve(__dirname, 'dist')}),
-    new webpack.HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({
+      title: 'react-sp-page',
+      template: './index.html',
+      minify: {collapseWhitespace: true}
+    })
   ],
-  devServer: {
-    hot: true,
-    port: 3000,
-    compress: true
-  }
 }
