@@ -6,7 +6,6 @@ const devConfig = {
   mode: 'development',
   devServer: {
     hot: true,
-    port: 3000,
     compress: true,
     historyApiFallback: true
   },
