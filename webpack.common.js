@@ -56,7 +56,7 @@ module.exports = {
     alias: {
       $com: path.resolve(__dirname, 'components'),
     },
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['.js', '.json', '.jsx', '.ts'],
   },
   optimization: {
     splitChunks: {

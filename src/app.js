@@ -1,5 +1,10 @@
 import ReactDOM from 'react-dom';
-import React, {Suspense, lazy} from 'react';
+import React, 
+{
+  Suspense, 
+  lazy, 
+  createContext
+} from 'react';
 import {
   Route, 
   Switch, 
@@ -15,19 +20,35 @@ const Index = lazy(() => import('./Index'));
 // 第二页
 const Page2 = lazy(() => import('./Page2'));
 
+const themes = {
+  light: {
+    headColor: '#84c225',
+    backGround: '#f00'
+  },
+
+  dark: {
+    headColor: '#ccc',
+    backGround: '#000'
+  }
+}
+
+export const ThemeContext = createContext(themes);
+
 function App() {
 
   return (
     <Router>
       <Suspense fallback={<Loading />}>
-        <Switch>
-          <Route path="/" exact>
-            <Index />
-          </Route>
-          <Route path="/page/:type">
-            <Page2 />
-          </Route>
-        </Switch>
+        <ThemeContext.Provider value={themes.light}>
+          <Switch>
+            <Route path="/" exact>
+              <Index />
+            </Route>
+            <Route path="/page/:type">
+              <Page2 />
+            </Route>
+          </Switch>
+        </ThemeContext.Provider>
       </Suspense>
     </Router>
   )

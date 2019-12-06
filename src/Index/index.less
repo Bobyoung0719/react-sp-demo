@@ -1,5 +1,28 @@
 .container {
   width: 100%;
-  padding: 25px;
-  height: 420px;
+}
+
+.grids-box {
+  display: grid;
+  // grid-template-columns: repeat(4, 100% / 4);
+  // grid-template-columns: repeat(auto-fill, 203px);
+  // grid-template-columns: [c1] 1fr [c2] 3fr [c3] 1.5fr;
+  grid-template-rows: 60px 110px 130px;
+
+  grid-gap: 20px 20px;
+  grid-auto-flow: column;
+  // grid-auto-flow: row dense;
+
+  div {
+    // background-color: aqua;
+    // border: 1px solid #f00;
+
+    &:nth-child(2n -1) {
+      background-color: rgb(106, 211, 249);
+    }
+
+    &:nth-child(2n) {
+      background-color: rgb(14, 239, 216);
+    }
+  }
 }
