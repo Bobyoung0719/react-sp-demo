@@ -8,32 +8,35 @@ const prodConfig = {
   mode: 'production',
   optimization: {
     minimizer: [
-      // new TerserPlugin({
-      //   terserOptions: {
-      //     warnings: false,
-      //     compress: {
-      //       drop_console: true,
-      //       drop_debugger: true,
-      //       pure_funcs: ['console.log']
-      //     }
-      //   },
-      //   extractComments: false
-      // }),
-      // new OptimizeCssAssetsPlugin({
-      //   cssProcessorOptions: {
-      //     safe: true,
-      //     autoprefixer: {disable: true},
-      //     mergeLonghand: false,
-      //     disCardComments: {
-      //       removeAll: true
-      //     }
-      //   }
-      // })
-    ]
+      new TerserPlugin({
+        terserOptions: {
+          warnings: false,
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+            pure_funcs: ['console.log']
+          }
+        },
+        extractComments: false
+      }),
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: {
+          safe: true,
+          autoprefixer: {disable: true},
+          mergeLonghand: false,
+          disCardComments: {
+            removeAll: true
+          }
+        }
+      })
+    ],
+    runtimeChunk: {
+      name: 'mainfest'
+    }
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[hash:5].css',
       ignoreOrder: true
     }),
   ]

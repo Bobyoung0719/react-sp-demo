@@ -63,8 +63,10 @@ module.exports = {
       cacheGroups: {
         verdor: {
           chunks: 'all',
-          name: 'verdor'
-        },
+          name: 'verdor',
+          priority: -10,
+          test: /node_modules/
+        }
       }
     }
   },
