@@ -30,11 +30,14 @@ const prodConfig = {
           }
         }
       })
-    ]
+    ],
+    runtimeChunk: {
+      name: 'mainfest'
+    }
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[hash:5].css',
       ignoreOrder: true
     }),
   ]

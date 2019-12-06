@@ -56,15 +56,17 @@ module.exports = {
     alias: {
       $com: path.resolve(__dirname, 'components'),
     },
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['.js', '.json', '.jsx', '.ts'],
   },
   optimization: {
     splitChunks: {
       cacheGroups: {
         verdor: {
           chunks: 'all',
-          name: 'verdor'
-        },
+          name: 'verdor',
+          priority: -10,
+          test: /node_modules/
+        }
       }
     }
   },
@@ -73,7 +75,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'react-sp-page',
       template: './index.html',
-      minify: {collapseWhitespace: true}
+      // minify: {collapseWhitespace: true}
     })
   ],
 }
