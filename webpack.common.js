@@ -73,9 +73,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({path: path.resolve(__dirname, 'dist')}),
     new HtmlWebpackPlugin({
+      hash: true,
       title: 'react-sp-page',
       template: './index.html',
-      minify: {collapseWhitespace: true}
+      // minify: {collapseWhitespace: true}
     })
   ],
 }

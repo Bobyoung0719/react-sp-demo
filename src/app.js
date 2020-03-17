@@ -20,6 +20,8 @@ const Index = lazy(() => import('./Index'));
 // 第二页
 const Page2 = lazy(() => import('./Page2'));
 
+console.log(Index);
+
 const themes = {
   light: {
     headColor: '#84c225',
@@ -39,7 +41,6 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<Loading />}>
-        <ThemeContext.Provider value={themes.light}>
           <Switch>
             <Route path="/" exact>
               <Index />
@@ -48,11 +49,11 @@ function App() {
               <Page2 />
             </Route>
           </Switch>
-        </ThemeContext.Provider>
       </Suspense>
     </Router>
   )
 };
+
 
 ReactDOM.render(
   <App />,

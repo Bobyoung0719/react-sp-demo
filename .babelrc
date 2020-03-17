@@ -1,12 +1,8 @@
 {
-  "presets": [["@babel/preset-env", {
-    "modules": false,
-    "corejs": 3,
-    "useBuiltIns": "usage"
-  }], "@babel/preset-react"],
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
     ["@babel/plugin-transform-runtime", {
-      "useESModules": true
+      "useESModules": true, "corejs": 3
     }],
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-export-default-from"
