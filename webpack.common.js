@@ -8,9 +8,8 @@ const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
   entry: './src/app.js',
   output: {
-    publicPath: '/',
-    filename: '[name].[hash:5].js',
-    chunkFilename: '[name].[hash:5].js',
+    filename: '[name].[hash:8].js',
+    chunkFilename: '[name].[hash:8].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {

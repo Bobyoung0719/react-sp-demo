@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common');
 
 const prodConfig = {
-  mode: 'production',
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -36,7 +35,7 @@ const prodConfig = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:5].css',
+      filename: '[name].[contenthash:8].css',
       ignoreOrder: true
     }),
   ]

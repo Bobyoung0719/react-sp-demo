@@ -37,10 +37,12 @@ const themes = {
 export const ThemeContext = createContext(themes);
 
 function App() {
+  const baseName = location.host.includes('location') ? '' : '/alex-rsp'; 
+  console.log(baseName)
 
   return (
-    <Router>
-      <Suspense fallback={<Loading />}>
+    <Router baseName={baseName}>
+      <Suspense fallback={<Loading visible/>}>
           <Switch>
             <Route path="/" exact>
               <Index />

@@ -3,7 +3,6 @@ const Merge = require('webpack-merge');
 const common = require('./webpack.common');
 
 const devConfig = {
-  mode: 'development',
   devServer: {
     hot: true,
     compress: true,
