@@ -1,39 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: './src/app.js',
-  output: {
-    filename: '[name].[hash:8].js',
-    chunkFilename: '[name].[hash:8].js',
-    path: path.resolve(__dirname, 'dist')
-  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(le|c)ss$/,
-        use:[
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[name]-[local]-[hash:5]'
-              }
-            }
-          },
-          'postcss-loader',
-          'less-loader'
-        ],
         exclude: /node_modules/
       },
       {
@@ -75,7 +50,7 @@ module.exports = {
       hash: true,
       title: 'react-sp-page',
       template: './index.html',
-      // minify: {collapseWhitespace: true}
+      minify: {collapseWhitespace: true}
     })
   ],
 }

@@ -15,10 +15,6 @@ function Index(props) {
 
   function onTest () {
     setIsUpdate(true);
-
-    // setTimeout(() => {
-    //   setIsUpdate(false);
-    // }, 1000);
   }
 
   useEffect(() => {

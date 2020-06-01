@@ -12,8 +12,8 @@
     "last 3 iOS versions"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

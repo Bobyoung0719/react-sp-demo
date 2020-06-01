@@ -1,11 +1,49 @@
+const path = require('path');
 const Merge = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const common = require('./webpack.common');
+const commonConfig = require('./webpack.common');
 
 const prodConfig = {
+  mode: 'production',
+  output: {
+    filename: '[name].[contenthash:8].js',
+    chunkFilename: '[name].[contenthash:8].js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(le|c|sa)ss$/,
+        use:[
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]-[local]-[hash:5]'
+              }
+            }
+          },
+          'postcss-loader',
+          'less-loader'
+        ],
+        exclude: /node_modules/
+      }
+    ]
+  },
   optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'all',
+          name: 'vendor',
+          priority: -10,
+          test: /node_modules/
+        }
+      }
+    },
     minimizer: [
       new TerserPlugin({
         terserOptions: {
@@ -29,9 +67,7 @@ const prodConfig = {
         }
       })
     ],
-    runtimeChunk: {
-      name: 'mainfest'
-    }
+    runtimeChunk: {name: 'mainfest'}
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -41,4 +77,4 @@ const prodConfig = {
   ]
 };
 
-module.exports = Merge(common, prodConfig);
+module.exports = Merge(commonConfig, prodConfig);

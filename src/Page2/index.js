@@ -4,12 +4,10 @@ import styles from './p2.less';
 
 function Page2() {
   const {type} = useParams();
-  // const match = useRouteMatch();
-  // const location = useLocation();
-
-  // console.log(params, match, location);
 
   let Content = type == 'all' ? <T1 /> : <T2 />
+
+  console.log(Content)
   
 
   return (
