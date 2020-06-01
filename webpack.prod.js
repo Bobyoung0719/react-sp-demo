@@ -34,6 +34,16 @@ const prodConfig = {
     ]
   },
   optimization: {
+    splitChunks: {
+      cacheGroups: {
+        verdor: {
+          chunks: 'all',
+          name: 'verdor',
+          priority: -10,
+          test: /node_modules/
+        }
+      }
+    },
     minimizer: [
       new TerserPlugin({
         terserOptions: {

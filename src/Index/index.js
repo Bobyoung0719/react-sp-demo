@@ -11,21 +11,10 @@ function Index(props) {
   let history = useHistory();
   const [data, setData] = useState([1,2,3]);
 
-  const [isUpdate, setIsUpdate] = useState(false);
-
-  function onTest () {
-    setIsUpdate(true);
-  }
-
-  useEffect(() => {
-    console.log(isUpdate);
-    console.log('object');
-  }, [isUpdate]);
   return (
     <div className={styles.container}>
-      <p onClick={onTest}>text</p>
       <p>—————— 哈哈哈 ————————</p>
-      <button onClick={() => history.push('/page/all')}>next page</button>
+      <button onClick={() => history.push('/page/1')}>next page</button>
     </div>
   )
 }
