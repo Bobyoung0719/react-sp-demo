@@ -20,6 +20,9 @@ const Index = lazy(() => import('./Index'));
 // 第二页
 const Page2 = lazy(() => import('./Page2'));
 
+// 第二页
+const Nomatch = lazy(() => import('./Nomatch'));
+
 const themes = {
   light: {
     headColor: '#84c225',
@@ -45,8 +48,11 @@ function App() {
           <Route path="/" exact>
             <Index />
           </Route>
-          <Route path="/page/:id">
+          <Route path='/page/1'>
             <Page2 />
+          </Route>
+          <Route path="/no-match">
+            <Nomatch />
           </Route>
         </Switch>
       </Suspense>

@@ -19,6 +19,9 @@ const tabText = [
 ];
 
 export default function Page2() {
+  const pa = useParams();
+  console.log(pa, '===================')
+
   return (
     <div className={styles.container}>
       dsaaaaaaaaaaaaaaaaaaaa

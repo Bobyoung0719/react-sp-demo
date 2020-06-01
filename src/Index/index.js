@@ -15,6 +15,7 @@ function Index(props) {
     <div className={styles.container}>
       <p>—————— 哈哈哈 ————————</p>
       <button onClick={() => history.push('/page/1')}>next page</button>
+      <button onClick={() => history.push('/no-match')}>no-match</button>
     </div>
   )
 }
