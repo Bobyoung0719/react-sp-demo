@@ -12,7 +12,7 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom';
 import Loading from '$com/Loading';
-import '../common/init.css';
+import '../html/init.css';
 
 // 主页
 const Index = lazy(() => import('./Index'));

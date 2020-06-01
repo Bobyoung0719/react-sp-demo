@@ -34,24 +34,14 @@ const prodConfig = {
     ]
   },
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          chunks: 'all',
-          name: 'vendor',
-          priority: -10,
-          test: /node_modules/
-        }
-      }
-    },
     minimizer: [
       new TerserPlugin({
         terserOptions: {
           warnings: false,
           compress: {
-            drop_console: true,
+            // drop_console: true,
             drop_debugger: true,
-            pure_funcs: ['console.log']
+            // pure_funcs: ['console.log']
           }
         },
         extractComments: false

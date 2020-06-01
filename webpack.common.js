@@ -49,7 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       title: 'react-sp-page',
-      template: './index.html',
+      template: './html/index.html',
       minify: {collapseWhitespace: true}
     })
   ],
