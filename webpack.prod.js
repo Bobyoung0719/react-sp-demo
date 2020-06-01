@@ -39,9 +39,9 @@ const prodConfig = {
         terserOptions: {
           warnings: false,
           compress: {
-            // drop_console: true,
+            drop_console: true,
             drop_debugger: true,
-            // pure_funcs: ['console.log']
+            pure_funcs: ['console.log']
           }
         },
         extractComments: false
