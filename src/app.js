@@ -39,7 +39,7 @@ export const ThemeContext = createContext(themes);
 
 function App() {
   const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
-  console.log(baseName)
+  console.log(baseName, location.path, location.href)
  
   return (
     <Router baseName={baseName}>
@@ -48,7 +48,7 @@ function App() {
           <Route path="/" exact>
             <Index />
           </Route>
-          <Route path='/page/1'>
+          <Route path='/page/:id'>
             <Page2 />
           </Route>
           <Route path="/no-match">

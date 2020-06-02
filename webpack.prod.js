@@ -10,7 +10,8 @@ const prodConfig = {
   output: {
     filename: '[name].[contenthash:8].js',
     chunkFilename: '[name].[contenthash:8].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/alex-rsp'
   },
   module: {
     rules: [
@@ -49,9 +50,9 @@ const prodConfig = {
         terserOptions: {
           warnings: false,
           compress: {
-            drop_console: true,
-            drop_debugger: true,
-            pure_funcs: ['console.log']
+            // drop_console: true,
+            // drop_debugger: true,
+            // pure_funcs: ['console.log']
           }
         },
         extractComments: false
