@@ -1,16 +1,6 @@
 import ReactDOM from 'react-dom';
-import React, 
-{
-  Suspense, 
-  lazy, 
-  createContext
-} from 'react';
-import {
-  Route, 
-  Switch, 
-  useParams,
-  BrowserRouter as Router
-} from 'react-router-dom';
+import React, {Suspense, lazy} from 'react';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Loading from '$com/Loading';
 import '../html/init.css';
 
@@ -23,23 +13,9 @@ const Home = lazy(() => import('./Home'));
 // 第二页
 const Nomatch = lazy(() => import('./Nomatch'));
 
-const themes = {
-  light: {
-    headColor: '#84c225',
-    backGround: '#f00'
-  },
-
-  dark: {
-    headColor: '#ccc',
-    backGround: '#000'
-  }
-}
-
-export const ThemeContext = createContext(themes);
-
 function App() {
   const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
-  
+
   return (
     <Router baseName={baseName}>
       <Suspense fallback={<Loading visible/>}>
@@ -48,7 +24,7 @@ function App() {
             <Index />
           </Route>
           <Route path='/home/:id'>
-            <Page2 />
+            <Home />
           </Route>
           <Route path="/no-match">
             <Nomatch />
