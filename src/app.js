@@ -1,27 +1,20 @@
 import ReactDOM from 'react-dom';
-import React, 
-{
-  Suspense, 
-  lazy, 
-  createContext
-} from 'react';
-import {
-  Route, 
-  Switch, 
-  useParams,
-  BrowserRouter as Router
-} from 'react-router-dom';
+import loadable from '@loadable/component';
+import React, {Suspense, lazy, createContext} from 'react';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+
 import Loading from '$com/Loading';
 import '../html/init.css';
 
 // 主页
-const Index = lazy(() => import('./Index'));
+const Index = loadable(() => import(`./Index`));
+
 
 // 第二页
-const Page2 = lazy(() => import('./Page2'));
+const Page2 = loadable(() => import('./Page2'));
 
 // 第二页
-const Nomatch = lazy(() => import('./Nomatch'));
+const Nomatch = loadable(() => import('./Nomatch'));
 
 const themes = {
   light: {
@@ -37,13 +30,18 @@ const themes = {
 
 export const ThemeContext = createContext(themes);
 
-function App() {
+function App(props) {
   const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
-  console.log(baseName, location.path, location.href)
+
+  console.log('baseName：', baseName)
  
   return (
-    <Router baseName={baseName}>
+    <Router basename={baseName}>
       <Suspense fallback={<Loading visible/>}>
+        <h2 style={{
+          textAlign: 'center',
+          padding: '10px 0'
+        }}>hello react-router</h2>
         <Switch>
           <Route path="/" exact>
             <Index />
@@ -54,12 +52,16 @@ function App() {
           <Route path="/no-match">
             <Nomatch />
           </Route>
+          {/* <Route path="*">
+            <Nomatch />
+          </Route> */}
         </Switch>
       </Suspense>
     </Router>
   )
 };
 
+// console.log(<App />)
 
 ReactDOM.render(
   <App />,

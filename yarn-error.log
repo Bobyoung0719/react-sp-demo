@@ -1,0 +1,99 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Administrator\scoop\apps\yarn\current\Yarn\bin\yarn.js start
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Administrator\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;%NVM_HOME%;%NVM_SYMLINK%;C:\Program Files\Git\cmd;C:\Users\Administrator\scoop\apps\yarn\current\Yarn\bin;C:\Users\Administrator\scoop\persist\yarn\global\node_modules\.bin;C:\Users\Administrator\scoop\shims;E:\vs code\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  10.15.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\studySpace\react-sp-demo\package.json: Unexpected token / in JSON at position 686
+      at JSON.parse (<anonymous>)
+      at C:\Users\Administrator\scoop\apps\yarn\1.22.4\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Administrator\scoop\apps\yarn\1.22.4\Yarn\lib\cli.js:310:30)
+      at C:\Users\Administrator\scoop\apps\yarn\1.22.4\Yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "react-sp-demo",
+    "version": "1.0.0",
+    "description": "react 单页应用脚手架",
+    "main": "index.js",
+    "browserslist": [
+      "defaults",
+      "not ie < 11",
+      "last 2 versions",
+      "> 1%",
+      "iOS 7",
+      "last 3 iOS versions"
+    ],
+    "scripts": {
+      "build": "webpack --config webpack.prod.js",
+      "start": "webpack-dev-server --config webpack.dev.js --progress",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Bobyoung0719/react-sp-demo.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Bobyoung0719/react-sp-demo/issues"
+    },
+    // "homepage": "./",
+    "devDependencies": {
+      "@babel/cli": "^7.5.5",
+      "@babel/core": "^7.5.5",
+      "@babel/plugin-proposal-class-properties": "^7.5.5",
+      "@babel/plugin-proposal-decorators": "^7.4.4",
+      "@babel/plugin-proposal-export-default-from": "^7.5.2",
+      "@babel/plugin-transform-runtime": "^7.5.5",
+      "@babel/preset-env": "^7.5.5",
+      "@babel/preset-react": "^7.0.0",
+      "autoprefixer": "^9.5.0",
+      "babel-loader": "^8.0.6",
+      "clean-webpack-plugin": "^3.0.0",
+      "cross-env": "^6.0.3",
+      "css-loader": "^3.2.0",
+      "file-loader": "^4.2.0",
+      "html-webpack-plugin": "^3.2.0",
+      "install": "^0.13.0",
+      "less": "^3.10.3",
+      "less-loader": "^5.0.0",
+      "mini-css-extract-plugin": "^0.8.0",
+      "npm": "^6.9.0",
+      "optimize-css-assets-webpack-plugin": "^5.0.3",
+      "postcss-loader": "^3.0.0",
+      "postcss-px2rem": "^0.3.0",
+      "style-loader": "^1.0.0",
+      "terser-webpack-plugin": "^2.2.1",
+      "url-loader": "^2.2.0",
+      "webpack": "^4.29.6",
+      "webpack-cli": "^3.3.0",
+      "webpack-dev-server": "^3.2.1",
+      "webpack-merge": "^4.2.2"
+    },
+    "dependencies": {
+      "@babel/runtime-corejs3": "^7.8.7",
+      "classnames": "^2.2.6",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6",
+      "react-router-dom": "^5.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
