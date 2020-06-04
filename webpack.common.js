@@ -37,7 +37,7 @@ module.exports = {
       hash: true,
       title: 'react-sp-page',
       template: './html/index.html',
-      // minify: {collapseWhitespace: true}
+      minify: {collapseWhitespace: true}
     })
   ],
 }
