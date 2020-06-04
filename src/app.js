@@ -18,7 +18,7 @@ import '../html/init.css';
 const Index = lazy(() => import('./Index'));
 
 // 第二页
-const Page2 = lazy(() => import('./Page2'));
+const Home = lazy(() => import('./Home'));
 
 // 第二页
 const Nomatch = lazy(() => import('./Nomatch'));
@@ -48,7 +48,7 @@ function App() {
           <Route path="/" exact>
             <Index />
           </Route>
-          <Route path='/page/:id'>
+          <Route path='/home/:id'>
             <Page2 />
           </Route>
           <Route path="/no-match">

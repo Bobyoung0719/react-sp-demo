@@ -1,15 +1,9 @@
-import React, {
-  useState,
-  useContext,
-  useCallback,
-  useEffect,
-} from 'react';
+import React from 'react';
 import {useHistory} from 'react-router-dom'
 import styles from './index.less';
 
 function Index(props) {
   let history = useHistory();
-  const [data, setData] = useState([1,2,3]);
 
   return (
     <div className={styles.container}>
