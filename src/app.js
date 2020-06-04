@@ -39,8 +39,7 @@ export const ThemeContext = createContext(themes);
 
 function App() {
   const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
-  console.log(baseName, location.path, location.href)
- 
+  
   return (
     <Router baseName={baseName}>
       <Suspense fallback={<Loading visible/>}>
