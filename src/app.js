@@ -1,8 +1,13 @@
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
 import loadable from '@loadable/component';
 import React, {Suspense, lazy, createContext} from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 
+=======
+import React, {Suspense, lazy} from 'react';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+>>>>>>> 5bc53c6be969b7a0fed55187fb0aaebe56c14f1a
 import Loading from '$com/Loading';
 import '../html/init.css';
 
@@ -11,11 +16,16 @@ const Index = loadable(() => import(`./Index`));
 
 
 // 第二页
+<<<<<<< HEAD
 const Page2 = loadable(() => import('./Page2'));
+=======
+const Home = lazy(() => import('./Home'));
+>>>>>>> 5bc53c6be969b7a0fed55187fb0aaebe56c14f1a
 
 // 第二页
 const Nomatch = loadable(() => import('./Nomatch'));
 
+<<<<<<< HEAD
 const themes = {
   light: {
     headColor: '#84c225',
@@ -35,6 +45,11 @@ function App(props) {
 
   console.log('baseName：', baseName)
  
+=======
+function App() {
+  const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
+
+>>>>>>> 5bc53c6be969b7a0fed55187fb0aaebe56c14f1a
   return (
     <Router basename={baseName}>
       <Suspense fallback={<Loading visible/>}>
@@ -46,8 +61,8 @@ function App(props) {
           <Route path="/" exact>
             <Index />
           </Route>
-          <Route path='/page/:id'>
-            <Page2 />
+          <Route path='/home/:id'>
+            <Home />
           </Route>
           <Route path="/no-match">
             <Nomatch />
