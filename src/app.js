@@ -5,14 +5,13 @@ import Loading from '$com/Loading';
 import '../html/init.css';
 
 // 主页
-const Index = loadable(() => import(`./Index`));
-
+const Index = lazy(() => import(`./Index`));
 
 // 第二页
 const Home = lazy(() => import('./Home'));
 
 // 第二页
-const Nomatch = loadable(() => import('./Nomatch'));
+const Nomatch = lazy(() => import('./Nomatch'));
 
 function App() {
   const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
