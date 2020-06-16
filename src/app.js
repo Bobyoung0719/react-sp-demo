@@ -10,9 +10,6 @@ const Index = lazy(() => import(`./Index`));
 // 第二页
 const Home = lazy(() => import('./Home'));
 
-// 第二页
-const Nomatch = lazy(() => import('./Nomatch'));
-
 function App() {
   const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
 
@@ -29,9 +26,6 @@ function App() {
           </Route>
           <Route path='/home/:id'>
             <Home />
-          </Route>
-          <Route path="/no-match">
-            <Nomatch />
           </Route>
         </Switch>
       </Suspense>

@@ -1,5 +1,5 @@
 {
-  "name": "11111",
+  "name": "1010",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bobyoung0719/11111.git"
+    "url": "git+https://github.com/Bobyoung0719/1010.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Bobyoung0719/11111/issues"
+    "url": "https://github.com/Bobyoung0719/1010/issues"
   },
-  "homepage": "https://github.com/Bobyoung0719/11111#readme",
+  "homepage": "https://github.com/Bobyoung0719/1010#readme",
   "browserslist": [
     "defaults",
     "not ie < 11",
