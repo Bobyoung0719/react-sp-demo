@@ -16,10 +16,6 @@ function App() {
   return (
     <Router basename={baseName}>
       <Suspense fallback={<Loading visible/>}>
-        <h2 style={{
-          textAlign: 'center',
-          padding: '10px 0'
-        }}>hello react-router</h2>
         <Switch>
           <Route path="/" exact>
             <Index />
