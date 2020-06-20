@@ -1,8 +1,22 @@
 {
-  "name": "react-sp-demo",
+  "name": "1010",
   "version": "1.0.0",
-  "description": "react 单页应用脚手架",
+  "description": "",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bobyoung0719/1010.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bobyoung0719/1010/issues"
+  },
+  "homepage": "https://github.com/Bobyoung0719/1010#readme",
   "browserslist": [
     "defaults",
     "not ie < 11",
@@ -11,21 +25,6 @@
     "iOS 7",
     "last 3 iOS versions"
   ],
-  "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js --progress",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Bobyoung0719/react-sp-demo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Bobyoung0719/react-sp-demo/issues"
-  },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",

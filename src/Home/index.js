@@ -4,7 +4,8 @@ import styles from './home.less';
 export default function Home() {
   return (
     <div className={styles.container}>
-      homehomehomehomehomehomehomehomehomehomehomehome
+      homehomehomehomehomehomehomehomehomehomehomehomewwwwwwwwwwwwwwwwawef
+      awefawfase
     </div>
   )
 };
