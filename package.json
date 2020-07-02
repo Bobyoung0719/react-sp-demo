@@ -1,5 +1,5 @@
 {
-  "name": "1010",
+  "name": "my-note",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bobyoung0719/1010.git"
+    "url": "git+https://github.com/Bobyoung0719/my-note.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alex-young",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Bobyoung0719/1010/issues"
+    "url": "https://github.com/Bobyoung0719/my-note/issues"
   },
-  "homepage": "https://github.com/Bobyoung0719/1010#readme",
+  "homepage": "https://github.com/Bobyoung0719/my-note#readme",
   "browserslist": [
     "defaults",
     "not ie < 11",
