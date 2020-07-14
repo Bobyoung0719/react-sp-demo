@@ -4,19 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bobyoung0719/1010.git"
+    "url": "git+https://github.com/Bobyoung0719/react-sp-demo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Bobyoung0719/1010/issues"
+    "url": "https://github.com/Bobyoung0719/1010/react-sp-demo"
   },
-  "homepage": "https://github.com/Bobyoung0719/1010#readme",
+  "homepage": "https://github.com/Bobyoung0719/react-sp-demo#readme",
   "browserslist": [
     "defaults",
     "not ie < 11",
