@@ -33,6 +33,7 @@ const devConfig = {
     ]
   },
   devServer: {
+    hot: true,
     historyApiFallback: true
   },
   plugins: [
