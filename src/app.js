@@ -11,7 +11,7 @@ const Index = lazy(() => import(`./Index`));
 const Home = lazy(() => import('./Home'));
 
 function App() {
-  const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
+  const baseName = location.host.includes('localhost') ? '' : '/my-note'; 
 
   return (
     <Router basename={baseName}>
@@ -28,6 +28,10 @@ function App() {
     </Router>
   )
 };
+
+if(module.hot) {
+  module.hot.accept();
+}
 
 ReactDOM.render(
   <App />,
