@@ -11,7 +11,7 @@ const prodConfig = {
     filename: '[name].[contenthash:8].js',
     chunkFilename: '[name].[contenthash:8].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/my-note'
+    publicPath: '/alex-rsp'
   },
   module: {
     rules: [

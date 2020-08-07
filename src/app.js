@@ -11,7 +11,7 @@ const Index = lazy(() => import(`./Index`));
 const Home = lazy(() => import('./Home'));
 
 function App() {
-  const baseName = location.host.includes('localhost') ? '' : '/my-note'; 
+  const baseName = location.host.includes('localhost') ? '' : '/alex-rsp'; 
 
   return (
     <Router basename={baseName}>
