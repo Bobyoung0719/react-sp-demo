@@ -1,5 +1,5 @@
 const path = require('path');
-const Merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -16,7 +16,7 @@ const prodConfig = {
   module: {
     rules: [
       {
-        test: /\.(le|c|sa)ss$/,
+        test: /\.(c|sc)ss$/,
         use:[
           MiniCssExtractPlugin.loader,
           {
@@ -28,7 +28,7 @@ const prodConfig = {
             }
           },
           'postcss-loader',
-          'less-loader'
+          'sass-loader'
         ],
         exclude: /node_modules/
       }
@@ -78,4 +78,4 @@ const prodConfig = {
   ]
 };
 
-module.exports = Merge(commonConfig, prodConfig);
+module.exports = merge(commonConfig, prodConfig);

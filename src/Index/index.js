@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
-import styles from './index.less';
+import styles from './index.scss';
 
 function Index(props) {
   let history = useHistory();

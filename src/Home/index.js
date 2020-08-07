@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './home.less';
+import styles from './home.scss';
 
 export default function Home() {
   return (

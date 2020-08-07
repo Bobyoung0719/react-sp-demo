@@ -12,13 +12,13 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(jpe?g|png|gif)$/,
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 8192,    // 小于8k的图片自动转成base64格式，并且不会存在实体图片
-              outputPath: 'images/'   // 图片打包后存放的目录
+              limit: 8192,
+              outputPath: 'images/'
             }
           }
         ]
@@ -29,7 +29,7 @@ module.exports = {
     alias: {
       $com: path.resolve(__dirname, 'components'),
     },
-    extensions: ['.js', '.json', '.jsx', '.ts'],
+    extensions: ['.js', '.json', '.jsx'],
   },
   plugins: [
     new CleanWebpackPlugin({path: path.resolve(__dirname, 'dist')}),
